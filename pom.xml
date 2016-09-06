@@ -81,5 +81,6 @@
 	<modules>
 		<module>ch02</module>
 		<module>ch08</module>
+		<module>ch09</module>
 	</modules>
 </project>
