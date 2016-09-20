@@ -27,9 +27,9 @@ public class WebSocketServerInitializer extends ChannelInitializer<Channel> {
         @Override
         protected void channelRead0(ChannelHandlerContext ctx, TextWebSocketFrame msg) throws Exception {
             System.out.println("text:" + msg.text());
-            // MessageToMessageEncoder will release msg
-            // and SimpleChannelInboundHandler will also release msg
-            // retain it or use copy?
+            // write method will release once
+            // and SimpleChannelInboundHandler will release msg too
+            // retain it
             ctx.channel().writeAndFlush(msg.retain());
         }
     }
